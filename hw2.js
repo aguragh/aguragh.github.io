@@ -1,0 +1,13 @@
+var num1 = prompt("Enter your first number");
+num1 = parseInt(num1, 10);
+var num2 = prompt("Enter your second number");
+num2 = parseInt(num2, 10);
+var num3 = prompt("Enter your third number");
+num3 = parseInt(num3, 10);
+var min = Math.min(num1, num2, num3);
+var max = Math.max(num1, num2, num3);
+sum = num1+num2+num3; 
+avg = sum/3
+document.getElementById("Minimum").textContent = "Minimum: " + min;
+document.getElementById("Maximum").textContent = "Maximum: " + max;
+document.getElementById("Average").textContent = "Average: " + avg.toFixed(2);
