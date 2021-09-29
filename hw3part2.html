@@ -43,7 +43,7 @@ function invalid(val,n){
         document.forms["myform"].elements["TotalSold"].value = "Invalid Input";
     }
     else {
-        temp = Numbers(val);
+        temp = Number(val);
         total += temp;
         switch(n){
             case 1:
