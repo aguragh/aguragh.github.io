@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>CIS 114 Homework 3</title>
+
+    <script>
+        function CtoF() {
+            let C = document.forms["myform"].elements["starttemp"].value;
+            if (isNaN(C)) {
+                document.forms["myform"].elements["finaltemp"].value = "ERROR: Invalid Input!";
+            }
+            else {
+            Ftemp = Math.round((9/5 * C) + 32);
+            document.forms["myform"].elements["finaltemp"].value = C+"C is equal to " + Ftemp + "F";
+        }
+        }
+        function FtoC() {
+            let F = document.forms["myform"].elements["starttemp"].value;
+            if (isNaN(F)) {
+                document.forms["myform"].elements["finaltemp"].value = "ERROR: Invalid Input!";
+            }
+            else {
+                Ctemp = Math.round(5/9 * (F - 32));
+                document.forms["myform"].elements["finaltemp"].value = F + "F is equal to " + Ctemp + "C";
+            }
+        }
+    </script>
+  </head>
+  <body>
+        <div class = "header">
+            <h1>Homework 3 </h1>
+            <form name="myform">
+                <table>
+                    <tr>
+                    <td>Starting Temprature:</td>
+                    <td><input type="text" id="starttemp" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" onclick="FtoC()" value="Translate to Celcius" size="10"></td>
+                        <td><input type="button" onclick="CtoF()" value="Translate to Farenheit" size="10"></td>
+                        <td><input type="reset" value="Reset Value" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td>Final Temprature:</td>
+                        <td><input type="text" id="finaltemp" size="20" readonly style="text-align: right;"></td>
+
+                    </tr>
+                </table>
+            </form>
+            <p> <a href="hw1.html">Go back to home page</a></p>
+            <p> <a href="hw3.html">Go to Homework 3 Part 1</a></p>
+            <p> <a href="hw3part2.html">Go to Homework 3 Part 2</a></p>
+
+
+        </div>    
+  </body>
+</html>
+ 

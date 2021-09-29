@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>CIS 114 Homework 3</title>
+
+    <script>
+
+function main() {
+
+let sold1 = document.forms["myform"].elements["Item1"].value;
+let sold2 = document.forms["myform"].elements["Item2"].value;
+let sold3 = document.forms["myform"].elements["Item3"].value;
+let sold4 = document.forms["myform"].elements["Item4"].value;
+let total = 0;
+let wage1, wage2, wage3, wage4;
+calculate();    
+ function calculate() {
+            invalid(sold1,1);
+            invalid(sold2,2);
+            invalid(sold3,3);
+            invalid(sold4,4);
+            profit = wage1+wage2+wage3+wage4;
+            let wages = .09*profit + 250;
+            wages = Math.round(wages*100)/100;
+            if (isNaN(wages)) {
+                document.forms["myform"].elements["TotalSold"].value = "Input Invalid";
+                document.forms["myform"].elements["wages"].value = "Input Invalid";
+            }
+            else {
+            document.forms["myform"].elements["TotalSold"].value = total;
+            document.forms["myform"].elements["wages"].value = "$" + wages;
+            }
+            
+        }
+
+function invalid(val,n){
+    if(isNaN(val) || Number(val) < 0) {
+        document.forms["myform"].elements[`Num${n}Sold`].value = "Invalid Input.";
+        document.forms["myform"].elements[`Total${n}`].value = "Invalid Input.";
+        document.forms["myform"].elements["wages"].value = "Invalid Input.";
+        document.forms["myform"].elements["TotalSold"].value = "Invalid Input";
+    }
+    else {
+        temp = Numbers(val);
+        total += temp;
+        switch(n){
+            case 1:
+                wage1 = Math.round(100*20.99*temp)/100;
+                document.forms["myform"].elements["Total1"].value = "$" + wage1;
+                break;
+            case 2:
+                wage2 = Math.round(100*12.75*sold2)/100;
+                document.forms["myform"].elements["Total2"].value = "$" + wage2;
+                break;
+            case 3:
+                wage3 = Math.round(100*9.95*sold3)/100;
+                document.forms["myform"].elements["Total3"].value = "$" + wage3;
+                break;
+            case 4:
+                wage4 = Math.round(100*35.89*sold4)/100;
+                document.forms["myform"].elements["Total4"].value = "$" + wage4;
+                break;
+        }
+        document.forms["myform"].elements[`Num${n}Sold`].value = temp;
+    }
+}
+}
+    </script>
+  </head>
+  <body>
+        <div class = "header">
+            <h1>Homework 3</h1>
+        </div>
+        <form name="myform">
+            <table>
+                <tr>
+                    <td>Salesperson: </td>
+                    <td><input type="text" id="SP" size="10"></td>
+                </tr>
+            </table>
+            <h3>Input the number of items sold for each item number!</h3>
+            <table>
+                <tr>
+                <td>Item 1</td>
+                <td><input type="text" id="Item1" size="10" style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>Item 2</td>
+                    <td><input type="text" id="Item2" size="10" style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>Item 3</td>
+                    <td><input type="text" id="Item3" size="10" style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>Item 4</td>
+                    <td><input type="text" id="Item4" size="10" style="text-align: right;"></td>
+                </tr>
+            </table>
+            <p></p>
+            <input type="button" onclick="main()" value="SUBMIT">
+            <input type="reset" value="RESET" >
+
+            <table>
+                <p></p>
+                <tr>
+                    <td style="font-weight: bold;">Item#</td>
+                    <td style="font-weight: bold;">Price</td>
+                    <td style="font-weight: bold;">Number Sold</td>
+                    <td style="font-weight: bold;">Total</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>$20.99</td>
+                    <td><input type="text" id="Num1Sold" size="10" readonly style="text-align: right;"></td>
+                    <td><input type="text" id="Total1" size="10" readonly style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>$12.75</td>
+                    <td><input type="text" id="Num2Sold" size="10" readonly style="text-align: right;"></td>
+                    <td><input type="text" id="Total2" size="10" readonly style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>$9.95</td>
+                    <td><input type="text" id="Num3Sold" size="10" readonly style="text-align: right;"></td>
+                    <td><input type="text" id="Total3" size="10" readonly style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>$35.89</td>
+                    <td><input type="text" id="Num4Sold" size="10" readonly style="text-align: right;"></td>
+                    <td><input type="text" id="Total4" size="10" readonly style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>Total Amount Sold:</td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="TotalSold" size="10" readonly style="text-align: right;"></td>
+                </tr>
+                <tr>
+                    <td>Total Earnings:</td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="wages" size="10" readonly style="text-align: right;"></td>
+                </tr>
+            </table>
+
+
+        </form>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+        <p> <a href="hw3.html">Go back to Homework 3 Part 1</a></p>
+        <p> <a href="h3part3.html">Go to Homework 3 Part 3</a></p>
+
+  </body>
+</html>
+ 

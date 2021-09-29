@@ -5,13 +5,121 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>CIS 114 Homework 3</title>
+
+  <script>
+
+    function calc() {
+
+      let final, hwAvg, midExam, finalExam, participation, error, temp
+
+      hwAvg = document.forms["myform"].elements["hwAvg"].value;
+      midExam = document.forms["myform"].elements["midExam"].value;
+      finalExam = document.forms["myform"].elements["finExam"].value;
+      participation = document.forms["myform"].elements["part"].value;
+
+
+      if (isNaN(hwAvg)) {
+        document.forms["myform"].elements["grade"].value = "Your input is invalid! Try Again!";
+        document.forms["myform"].elements["avg"].value = "Invalid Input! Please Reenter.";
+      }
+      else if (isNaN(midExam)) {
+        document.forms["myform"].elements["grade"].value = "Your input is invalid! Try Again.";
+        document.forms["myform"].elements["avg"].value = "Invalid Input! Please Reenter.";
+      }
+      else if (isNaN(finalExam)) {
+        document.forms["myform"].elements["grade"].value = "Your input is invalid! Try Again.";
+        document.forms["myform"].elements["avg"].value = "Invalid Input! Please Reenter.";
+      }
+      else if (isNaN(participation)) {
+        document.forms["myform"].elements["grade"].value = "Your input is invalid! Try Again.";
+        document.forms["myform"].elements["avg"].value = "Invalid Input! Please Reenter.";
+      }
+      
+
+      else {
+ 
+      n1 = parseInt(hwAvg);
+      n2 = parseInt(midExam);
+      n3 = parseInt(finalExam);
+      n4 = parseInt(participation);
+      
+
+      final =  Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation));
+
+      document.forms["myform"].elements["avg"].value = final + "%";
+
+    if (final > 100 || final < 0) {
+      document.forms["myform"].elements["grade"].value = "Your input is invalid! Try Again.";
+    
+    }
+
+    if (final>=90 && final <= 100) {
+      document.forms["myform"].elements["grade"].value = "A";
+    }
+
+
+    else if (final>=80 && final<90){
+      document.forms["myform"].elements["grade"].value = "B";
+    }
+
+    else if (final>=70 && final<80) {
+      document.forms["myform"].elements["grade"].value = "C";
+    }
+
+    else if (final>=60 && final<70) {
+      document.forms["myform"].elements["grade"].value = "D: Please Retake";
+    }
+
+    else if (final<60) {
+      document.forms["myform"].elements["grade"].value = "F: Please Retake";
+    }
+  }
+  }
+
+  </script>
   </head>
+
   <body>
         <div class = "header">
             <h1>Homework 3</h1>
-            <p>Not yet finished, come back soon!</p>
-            <p> <a href="hw1.html">Go back to home page</a></p>
         </div>    
-  </body>
+
+        <form name="myform">
+        <table>
+        <tr>
+          <td>Homework Average:</td>
+          <td><input type="text" id="hwAvg" size="10"> </td> 
+        </tr>
+        <tr>
+          <td>Midterm Score:</td>
+          <td><input type="text" id="midExam" size="10"> </td> 
+        </tr>
+        <tr>
+          <td>Final Score:</td>
+          <td><input type="text" id="finExam" size="10"> </td> 
+        </tr>
+        <tr>
+          <td>Participation:</td>
+          <td><input type="text" id="part" size="10"> </td> 
+        </tr>
+        <tr>
+          <td>Average:</td>
+          <td><input type="text" size="25" id="avg" readonly> </td> 
+        </tr>
+        <tr>
+          <td>Final Grade:</td>
+          <td><input type="text" size="25" id="grade" readonly> </td> 
+        </tr>
+        </table>
+
+        <input type="button" onclick="calc()" value="SUBMIT">
+        <input type="reset" value="RESET" >
+        
+
+        </form>
+        <p id="error"> </p>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+        <p> <a href="hw3part2.html">Go to Homework 3 Part 2</a></p>
+      </body>
 </html>
  
