@@ -10,77 +10,79 @@
             <h1>Homework 4</h1>
         </div>
         <div id="wrapper"></div>
-    <p> <a href="hw1.html">Go back to home page</a></p>
-    <p> <a href="hw4.html">Go back to Homework 4 Part 1</a></p>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+        <p> <a href="hw4.html">Go back to Homework 4 Part 1</a></p>
 
-  </body>
-  
-  <script>
-    let tables = [];
-    let headerContent = ["Year","Amount","Interest Rate"];
-    for(let i = 0; i<3; i++){
-      tables.push(document.createElement("table")); 
-    }
- 
-    for(let Table of tables){
-      let header = Table.createTHead(),
-      row, 
-      cell; 
-      row = header.insertRow();
-      for (let i = 0; i < headerContent.length; i++) {
-        cell = row.insertCell(i);
-        cell.style.border="1px solid #000";
-        cell.style.backgroundColor = "maroon";
-        cell.style.color = "white";
-        cell.style.fontWeight = "bold";
-        cell.textContent = headerContent[i];
-      }
-    }
-    
-    n=1;
-    r=.05;
-    r2=.06;
-    r3=.07;
-    P = 1000;
-    P2 = 1000;
-    P3 = 1000;
-
-    while (n <= 10) {
-        P = P * (1+r);
-        P2 = P2 * (1+r2);
-        P3 = P3 * (1+r3);
-
-        for(let i =0; i<tables.length; i++){
-          let Table = tables[i];
-          let body = Table.createTBody(), row, cell, temp, temp2;
-          row = body.insertRow();
-          switch(i){
-            case 0:
-              temp = P;
-              temp2 = "5%";
-              break;
-            case 1:
-              temp = P2;
-              temp2 = "6%";
-              break;
-            case 2:
-              temp = P3;
-              temp2 = "7%";
-              break;
+        <script>
+          let tables = [];
+          let headerContent = ["Year","Amount","Interest Rate"];
+          for(let i = 0; i<3; i++){
+            tables.push(document.createElement("table")); 
           }
-          let vals = [n, temp.toLocaleString('en-US', {maximumFractionDigits:2}), temp2];
-          for(let j = 0; j<vals.length; j++){
-            cell = row.insertCell(j);
-            cell.style.border="1px solid #000";
-            cell.style.backgroundColor = (n%2 == 0) ? "yellow" : "orange";
-            cell.textContent = vals[j];
-          }      
-          let wrapper = document.getElementById('wrapper');
-          wrapper.appendChild(Table);
-        }
-        n+=1;
-    }
-  
-  </script>
+       
+          for(let Table of tables){
+            let header = Table.createTHead(),
+            row, 
+            cell; 
+            row = header.insertRow();
+            for (let i = 0; i < headerContent.length; i++) {
+              cell = row.insertCell(i);
+              cell.style.border="1px solid #000";
+              cell.style.backgroundColor = "maroon";
+              cell.style.color = "white";
+              cell.style.fontWeight = "bold";
+              cell.textContent = headerContent[i];
+            }
+          }
+          
+          n=1;
+          r=.05;
+          r2=.06;
+          r3=.07;
+          P = 1000;
+          P2 = 1000;
+          P3 = 1000;
+      
+          while (n <= 10) {
+              P = P * (1+r);
+              P2 = P2 * (1+r2);
+              P3 = P3 * (1+r3);
+      
+              for(let i =0; i<tables.length; i++){
+                let Table = tables[i];
+                let body = Table.createTBody(), row, cell, temp, temp2;
+                row = body.insertRow();
+                switch(i){
+                  case 0:
+                    temp = P;
+                    temp2 = "5%";
+                    break;
+                  case 1:
+                    temp = P2;
+                    temp2 = "6%";
+                    break;
+                  case 2:
+                    temp = P3;
+                    temp2 = "7%";
+                    break;
+                }
+                let vals = [n, temp.toLocaleString('en-US', {maximumFractionDigits:2}), temp2];
+                for(let j = 0; j<vals.length; j++){
+                  cell = row.insertCell(j);
+                  cell.style.border="1px solid #000";
+                  cell.style.backgroundColor = (n%2 == 0) ? "yellow" : "orange";
+                  cell.textContent = vals[j];
+                }      
+                let wrapper = document.getElementById('wrapper');
+                wrapper.appendChild(Table);
+              }
+              n+=1;
+          }
+        
+        </script>
+  </body>
+
+
+
 </html>
  
