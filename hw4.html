@@ -3,14 +3,85 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>CIS 114 Homework 4</title>
-  </head>
+      </head>
   <body>
-        <div class = "header">
-            <h1>Homework 4</h1>
-            <p>Not yet finished, come back soon!</p>
+    <div class = "header">
+      <h1>Homework 4</h1>
+    <table id="mytable" class="center">
+      <tr>
+        <td id="1">Sum 1:</td>
+      <td id="sum1" style="font-weight: bold; text-align: center;"></td>
+      </tr>
+      <tr>
+        <td id="2">Product 1:</td>
+        <td id="product1" style="font-weight: bold; text-align: center;">
+        </td>
+      </tr>
+      <tr>
+        <td>Sum 2:</td>
+        <td id="sum2" style="font-weight: bold; text-align: center;"></td>
+      </tr>
+      <tr>
+        <td>Product 2:</td>
+        <td id="product2" style="font-weight: bold; text-align: center;"></td>
+      </tr>
+    </table>
+ 
+
+            <script defer>
+              
+              let counter1 = 5;
+              let counter2 = 5;
+              let sum = 0;
+              let product = 1;
+              while (counter1 < 26) {
+                sum = sum+counter1;
+                counter1 += 4;
+              }
+
+              sum = sum.toLocaleString();
+        
+              while (counter2 < 26) {
+                product = product*counter2;
+                counter2+=4;
+              }
+
+              product = product.toLocaleString();
+      
+              
+              document.getElementById("sum1").innerText = sum.toString();
+              document.getElementById("product1").innerText = product.toString();
+
+              let counter3 = 3;
+              let counter4 = 3;
+              let sum2 = 0;
+              let product2 = 1;
+
+              while (counter3 < 19) {
+                sum2 += counter3;
+                counter3+=3;
+              }
+              
+              sum2 = sum2.toLocaleString();
+
+              while (counter4 < 19) { 
+                product2*=counter4;
+                counter4+=3
+              }
+
+              product2 = product2.toLocaleString();
+
+              document.getElementById("sum2").innerText = sum2.toString();
+
+              document.getElementById("product2").innerText = product2.toString();
+
+
+              </script>
+
             <p> <a href="hw1.html">Go back to home page</a></p>
-        </div>    
+        </div>
+
+
   </body>
 </html>
  
