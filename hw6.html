@@ -3,14 +3,88 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>CIS 114 Homework 6</title>
   </head>
   <body>
         <div class = "header">
             <h1>Homework 6</h1>
-            <p>Not yet finished, come back soon!</p>
-            <p> <a href="hw1.html">Go back to home page</a></p>
-        </div>    
+            <form id="form" action="successful-form.html" target="blank"> 
+              <label for="What is your Name?">What is your Name?</label>
+              <input type="text" id="input"><br>
+              <br>
+              <label>What is your Favourite Car?</label> </br>
+
+              <input type="radio" value="Option 1" name="radio">
+              <label for="Option 1">Honda</label><br>
+              <input type="radio" value="Option 2" name="radio">
+              <label for="Option 2">Volvo</label><br>
+              <input type="radio" value="Option 3" name="radio">
+              <label for="Option 2">BMW</label><br>
+              <br>
+              <label>What are your different Hobbies?</label> <br>
+              <input type="checkbox" value="Option 1" name="check">
+              <label for="Option 1">Writing</label><br>
+              <input type="checkbox" value="Option 2" name="check">
+              <label for="Option 2">Music</label><br>
+              <input type="checkbox" value="Option 3" name="check">
+              <label for="Option 3">Video Games</label><br>
+              <br>
+              <label for="drop">What is your favourite food?:</label>
+              <select id="drop" name="options">
+                <option value="select">Please select an option</option>
+                <option>Pizza</option>
+                <option>Pasta</option>
+                <option>Sushi</option>
+              </select><br>
+              <br></br>
+              <input type="submit" value="submit">
+            </form>
+
+            <div id="errors"></div> 
+        </div>
+        <script defer>
+          
+          document.getElementById("form").addEventListener("submit", function(e){  
+            let input = document.getElementById("input").value;
+            let radio = document.getElementsByName("radio");
+            let check = document.getElementsByName("check");
+            let drop = document.getElementById("drop");
+            let errors = document.getElementById("errors");
+
+            while(errors.firstChild){
+              errors.removeChild(errors.firstChild);
+            }
+
+            if(input === "") addError("Please enter a value in the input box", e);
+
+            for(let i = 0; i < radio.length; i++){
+              if(radio[i].checked) break;
+              else if(i === radio.length - 1) addError("Please check at least one radio button", e);
+            }
+
+            for(let i = 0; i < check.length; i++){
+              if(check[i].checked) break;
+              else if(i === check.length - 1) addError("Please check at least one checkbox", e);
+            }
+
+            if(drop.value === "select") addError("Please select a dropdown option", e);
+            
+            if(!errors.hasChildNodes()){
+              errors.textContent = "Form was sucessfully submitted";
+            }
+          });
+          function addError(message, e){
+            let p = document.createElement("p");
+            p.textContent = message;
+            document.getElementById("errors").appendChild(p);
+            e.preventDefault();
+          }
+          
+        </script>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+        <p> <a href="hw6part2.html">Go to HW 6 Part 2</a></p>
+        <p> <a href="hw6part3.html">Go to HW 6 Part 3</a></p>
+
+
   </body>
 </html>
  
