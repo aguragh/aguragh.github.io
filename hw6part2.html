@@ -27,8 +27,8 @@
                 <br>
                 <tr>
                     <td>
-                        <textarea id="output" readonly></textarea>
-                    </td> 
+                        <textarea id="output"></textarea>
+                    </td>
                 </tr>
             </table>
         </form>
@@ -39,10 +39,6 @@
 
 
         <script>
-
-            while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
-            }
 
             function letterCount() {
                 
@@ -66,12 +62,6 @@
             }
         }
 
-                
-          function append(text) {
-            let p = document.createElement("p");
-            p.textContent = text;
-            document.getElementById("result").appendChild(p);
-          }
         </script>
   </body>
 </html>
