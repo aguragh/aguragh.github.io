@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+        <div class = "header">
+            <h1>Homework 6</h1>
+        </div>
+        <form>
+            <table>
+                <tr>
+                    <td>Enter your phrase!</td>
+                    <td><textarea type="text" id="phrase" size="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Enter your letter!</td>
+                    <td><input type="text" id="letter" size="10"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" onclick="letterCount()" value="SUBMIT">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div id="result"></div>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+        <p> <a href="hw6.html">Go back to HW 6 Part 1</a></p>
+
+
+        <script>
+
+            while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+            }
+
+            function letterCount() {
+                
+            word = document.getElementById("phrase").value;
+            letter = document.getElementById("letter").value;
+            let counter = 0;
+
+
+            
+            for (var i = 0; i<word.length; i++) {
+                if (word.charAt(i).toLowerCase() == letter.toLowerCase()) {
+                    counter += 1;
+                }
+            }
+
+            if (counter == 0) {
+                window.open("message.html", width="300", height="100");
+            }
+            else { 
+            append("The letter " + letter + " appears " + counter + " times in the word " + word + ".");
+            }
+        }
+
+                
+          function append(text) {
+            let p = document.createElement("p");
+            p.textContent = text;
+            document.getElementById("result").appendChild(p);
+          }
+        </script>
+  </body>
+</html>
+ 

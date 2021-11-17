@@ -3,14 +3,68 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>CIS 114 Homework 6</title>
   </head>
   <body>
-        <div class = "header">
-            <h1>Homework 5</h1>
-            <p>Not yet finished, come back soon!</p>
-            <p> <a href="hw1.html">Go back to home page</a></p>
-        </div>    
+        
+<div class = "header">
+            <h1>Homework 6</h1>
+        </div>
+        <form>
+            <table>
+                <tr>
+                <td>Enter a Number!</td>
+                <td><input type="text" id="number" size="10" style="text-align: right;"></td>
+                <td><input type="button" value="Print Rounded Numbers" size="10" onclick="verifyDecimal()"></td>
+
+            </table>
+        </form>
+        <div id="result"></div>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+        <p> <a href="hw6part2.html">Go to HW 6 Part 2</a></p>
+
+        
+        <script>
+        
+        document.getElementById("number").addEventListener('change', function() {
+    let parent = document.getElementById("result");
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+});
+
+
+          function verifyDecimal() {
+    let num1 = document.getElementById("number").value;
+    num1 = parseFloat(num1);
+    if (String(num1).includes(".")) {
+        //check if a the number has at least 4 digits after the decimal point
+        if (String(num1).split(".")[1].length < 4) {
+            append("Enter a new number and make sure you have 4 decimal points!");
+        }
+
+    else {
+        round_root = Math.round(Math.sqrt(num1));
+        append("Your number is " + num1);
+        append("Your rounded number is " + Math.round(num1));
+        append("The rounded square root of your number is " + round_root);
+        append("Your number when rounded to the tenths place is " + num1.toFixed(1));
+        append("Your number when rounded to the hundreds place is " + num1.toFixed(2));
+        append("Your number when rounded to the thousands place is " + num1.toFixed(3));
+    }
+    }
+    else {
+        append("Please make sure the number is a decimal!");
+    }
+
+  }
+
+          function append(text) {
+                        let p = document.createElement("p");
+                        p.textContent = text;
+                        document.getElementById("result").appendChild(p);
+                    }
+                    
+          
+      </script>
   </body>
 </html>
- 
