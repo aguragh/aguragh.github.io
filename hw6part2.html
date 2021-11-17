@@ -24,6 +24,12 @@
                         <input type="button" onclick="letterCount()" value="SUBMIT">
                     </td>
                 </tr>
+                <br>
+                <tr>
+                    <td>
+                        <textarea id="output"></textarea>
+                    </td>
+                </tr>
             </table>
         </form>
 
@@ -56,7 +62,7 @@
                 window.open("message.html", width="300", height="100");
             }
             else { 
-            append("The letter " + letter + " appears " + counter + " times in the word " + word + ".");
+            document.getElementById("output").value = "The letter " + letter + " appears " + counter + " times in the word " + word + ".";
             }
         }
 
