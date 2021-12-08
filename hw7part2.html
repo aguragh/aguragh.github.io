@@ -31,26 +31,11 @@
                   </table>
           </form>
         </div>
-
         <div id="container"></div>
         <p> <a href="hw1.html">Go back to home page</a></p>
 
     <script>
 
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 
 
@@ -62,20 +47,7 @@ function getCookie(cname) {
       document.cookie = mycookie1;
       let mycookie2 = "name="+name;
       document.cookie = mycookie2;
-      console.log(document.cookie);
-
-      let username = getCookie(username);
-      let name = getCookie(name);
-      
-      if (username == null || name == null) {
-        document.getElementById("container").value = "";
-      }
-      else {
-        document.getElementById("hidden").value = "";
-        document.getElementById("container").value = "Welcome " + name + ", your username is " + username + "."; 
-      }
-
-      
+      console.log(document.cookie);      
 
       }
     </script>    
