@@ -71,11 +71,10 @@ function getCookie(cname) {
       let n = getCookie("name");
       
       if (u =! null && n != null) {
-        document.getElementById("welcomemessaege").value = document.cookie; 
+      document.write(document.cookie);
       }
       else {
-        document.getElementById("welcomemessaege").value = "enter proper value"; 
-
+        document.write("stop being bozo"!);
       }
 
           
