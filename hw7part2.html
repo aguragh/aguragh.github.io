@@ -69,7 +69,7 @@ function getCookie(cname) {
 
       if (document.cookie != "") {
         document.getElementById("hidden").style.display = 'none';
-        document.write('<p id="jstext">' + "Hello " + getCookie("username") + " your name is " + getCookie("name") + '</p>');
+        document.write('<p id="jstext">' + "Welcome back, " + getCookie("name") + ", your username is " + getCookie("username") + '</p>');
       }
       else {
         console.log("reddit");
