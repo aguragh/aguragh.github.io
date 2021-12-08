@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+        <div class = "header">
+            <h1>Homework 7</h1>
+            <p></p>
+
+            <form id="webpage">
+              <p>Background Color:</p>
+              <input type="radio" name="bgcolor" value="red">Red
+              <input type="radio" name="bgcolor" value="orange">Orange
+              <input type="radio" name="bgcolor" value="yellow">Yellow
+              <input type="radio" name="bgcolor" value="green">Green
+              <input type="radio" name="bgcolor" value="blue">Blue
+              <input type="radio" name="bgcolor" value="indigo">Indigo
+              <input type="radio" name="bgcolor" value="violet">Violet
+              <input type="radio" name="bgcolor" value="black">Black
+              <input type="radio" name="bgcolor" value="white">White
+              <p>Font:</p>
+              <select name="font">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Impact">Impact</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Verdana">Verdana</option>
+              </select>
+              <p>Font Style:</p>
+              <input type="checkbox" name="italic" value="italic">Italic
+              <input type="checkbox" name="bold" value="bold">Bold
+              <input type="checkbox" name="underline" value="underline">Underline
+              
+            </form> 
+            <p> <a href="hw1.html">Go back to home page</a></p>
+            <p> <a href="hw7part2.html">Go to hw7 part 2</a></p>
+
+        </div>    
+    <script>
+      let form = document.getElementById("webpage");
+      form.addEventListener("change", function(event){
+        event.preventDefault();
+       
+        if(form.italic.checked) document.body.style.fontStyle = "italic";
+        else document.body.style.fontStyle = "normal";
+        
+        if(form.bold.checked) document.body.style.fontWeight = "bold";
+        else document.body.style.fontWeight = "normal";
+        
+        if(form.underline.checked) document.body.style.textDecoration = "underline";
+        else document.body.style.textDecoration = "none";
+
+        document.body.style.backgroundColor = form.bgcolor.value;
+        document.body.style.fontFamily = form.font.value;
+      });
+    </script>
+  </body>
+</html>
+ 
