@@ -75,6 +75,7 @@
 
         if (document.cookie != "") {
           document.getElementById("hidden").style.display = 'none';
+          document.write("Hello " + getCookie("username") + " your name is " + getCookie("name"));
         }
         else {
           console.log("reddit");
