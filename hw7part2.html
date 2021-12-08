@@ -74,7 +74,8 @@
         }
 
         if (document.cookie != "") {
-          document.getElementById("hidden").style.display = "Hello " + n + ", your username is " + u;
+          document.getElementById("hidden").style.display = 'none';
+          document.getElementById("container").value = "Hi!";
         }
         else {
           console.log("reddit");
