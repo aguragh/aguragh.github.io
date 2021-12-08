@@ -56,20 +56,24 @@ function getCookie(cname) {
       function logcookie() {
 
       user = document.getElementById("username").value;
+      name = document.getElementById("name").value;
 
       
       let mycookie1 = "username="+user;
       document.cookie = mycookie1;
+      let mycookie2 = "name="+name;
+      document.cookie = mycookie2;
       console.log(document.cookie);
 
-      let username = getCookie(username);
+      let u = getCookie("username");
+      let n = getCookie("name");
       
-      if (username == null || name == null) {
+      if (u == null || n == null) {
         document.getElementById("container").value = "";
       }
       else {
         document.getElementById("hidden").value = "";
-        document.getElementById("container").value = "Welcome, your username is " + username + "."; 
+        document.getElementById("container").value = "Welcome " + n + ", your username is " + u + "."; 
       }
 
       
