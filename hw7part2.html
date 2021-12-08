@@ -71,7 +71,7 @@ function getCookie(cname) {
       let n = getCookie("name");
       
       if (u =! null && n != null) {
-        document.getElementById("welcomemessaege").value = "Welcome " + n + ", your username is " + u + "."; 
+        document.getElementById("welcomemessaege").value = document.cookie; 
       }
       else {
         document.getElementById("welcomemessaege").value = "enter proper value"; 
