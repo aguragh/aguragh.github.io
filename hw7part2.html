@@ -37,11 +37,16 @@
     <script>
 
       function logcookie() {
+
       user = document.getElementById("username").value;
       name = document.getElementById("name").value;
-      var myCookie = "username=aaaa";
-      document.cookie = myCookie;
+      let mycookie1 = "username="+user;
+      document.cookie = mycookie1;
       console.log(document.cookie);
+      let mycookie2 = "name="+name;
+      document.cookie = mycookie2;
+      
+
       }
     </script>    
   </body>
