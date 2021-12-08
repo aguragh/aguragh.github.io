@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script type="javascript" src="script.js"></script>
+  </head>
+  <body>
+        <div class = "header">
+            <h1>Homework 7</h1>            
+        </div>
+        
+        <div id='hidden'>
+
+          <form id="form">
+              <table>
+                  <tr>
+                  <td>username:</td>        
+                  <td><input type="text" id="username" size="10" style="text-align: right;"></td>
+                  </tr>
+
+                  <tr>
+                      <td>name:</td>
+                      <td><input type="text" id="name" size="10" style="text-align: right;"></td>
+                  </tr>
+                  <tr>               
+                    <td>
+                      <input type="button" value="Submit" onclick="logcookie()">
+                    </td>
+                  </tr>
+                  </table>
+          </form>
+        </div>
+        <div id="container"></div>
+        <p> <a href="hw1.html">Go back to home page</a></p>
+
+    <script>
+
+      function logcookie() {
+      user = document.getElementById("username").value;
+      name = document.getElementById("name").value;
+      var myCookie = "username=aaaa";
+      document.cookie = myCookie;
+      console.log(document.cookie);
+      }
+    </script>    
+  </body>
+</html>
