@@ -1,84 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-        <div class = "header">
-            <h1>Homework 7</h1>            
-        </div>
-        
-        <div id='hidden'>
-
-          <form id="form">
-              <table>
-                  <tr>
-                  <td>username:</td>        
-                  <td><input type="text" id="username" size="10" style="text-align: right;"></td>
-                  </tr>
-
-                  <tr>
-                      <td>name:</td>
-                      <td><input type="text" id="name" size="10" style="text-align: right;"></td>
-                  </tr>
-                  <tr>               
-                    <td>
-                      <input type="button" value="Submit" onclick="logcookie()">
-                    </td>
-                  </tr>
-                  </table>
-          </form>
-        </div>
-
-        <div id="container"></div>
-        <p> <a href="hw1.html">Go back to home page</a></p>
-
-    <script>
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-      function logcookie() {
-
-      user = document.getElementById("username").value;
-      name = document.getElementById("name").value;
-
-      
-      let mycookie1 = "username="+user;
-      document.cookie = mycookie1;
-      let mycookie2 = "name="+name;
-      document.cookie = mycookie2;
-      console.log(document.cookie);
-
-      let u = getCookie("username");
-      let n = getCookie("name");
-      
-      if (u =! null && n != null) {
-        document.getElementById("hidden").style.display = 'none';
-      }
-      else {
-        document.getElementById("hidden").value = "enter proper value"; 
-
-      }
-
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+          <div class = "header">
+              <h1>Homework 7</h1>            
+          </div>
           
+          <div id='hidden'>
 
-      
+            <form id="form">
+                <table>
+                    <tr>
+                    <td>username:</td>        
+                    <td><input type="text" id="username" size="10" style="text-align: right;"></td>
+                    </tr>
 
+                    <tr>
+                        <td>name:</td>
+                        <td><input type="text" id="name" size="10" style="text-align: right;"></td>
+                    </tr>
+                    <tr>               
+                      <td>
+                        <input type="button" value="Submit" onclick="logcookie()">
+                      </td>
+                    </tr>
+                    </table>
+            </form>
+          </div>
+
+          <div id="container"></div>
+          <p> <a href="hw1.html">Go back to home page</a></p>
+
+      <script>
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
       }
-    </script>    
-  </body>
-</html>
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+        function logcookie() {
+
+        user = document.getElementById("username").value;
+        name = document.getElementById("name").value;
+
+        
+        let mycookie1 = "username="+user;
+        document.cookie = mycookie1;
+        let mycookie2 = "name="+name;
+        document.cookie = mycookie2;
+        console.log(document.cookie);
+
+        let u = getCookie("username");
+        let n = getCookie("name");
+        
+        if (u && n) {
+          document.getElementById("hidden").style.display = 'none';
+        }
+        else {
+          console.log("reddit");
+        }
+
+            
+
+        
+
+        }
+      </script>    
+    </body>
+  </html>
