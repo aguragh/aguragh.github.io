@@ -9,8 +9,6 @@
             <h1>Homework 7</h1>            
         </div>
         
-        <p id="welcomemessage"></p>
-
         <div id='hidden'>
 
           <form id="form">
@@ -53,8 +51,6 @@ function getCookie(cname) {
   return "";
 }
 
-
-
       function logcookie() {
 
       user = document.getElementById("username").value;
@@ -71,10 +67,10 @@ function getCookie(cname) {
       let n = getCookie("name");
       
       if (u =! null && n != null) {
-        document.getElementById("welcomemessage").value = "Welcome " + n + ", your username is " + u + "."; 
+        document.getElementById("hidden").style.display = 'none';
       }
       else {
-        document.getElementById("welcomemessage").value = "enter proper value"; 
+        document.getElementById("hidden").value = "enter proper value"; 
 
       }
 
